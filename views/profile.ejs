@@ -1,0 +1,190 @@
+<html>
+    <head>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+
+body{
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+ font-family: "Poppins", sans-serif;
+ font-weight: 300;
+ height:fit-content;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: flex-start;
+}
+
+.container{
+ height: fit-content;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+}
+
+.card{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ width: 380px;
+ border: none;
+ border-radius: 15px;
+ padding: 15px;
+ background-color: #fff;
+ position: relative;
+ height: fit-content;
+ margin-top: 4rem;
+ margin-bottom: 4rem;
+}
+
+.upper{
+ height: 120px;
+
+}
+
+.upper img{
+
+ width: 100%;
+ height: 100%;
+ border-radius: 10px;
+
+}
+
+.user{
+ position: relative;
+}
+
+
+.profile{
+
+ position: absolute;
+ top:-110px;
+ left: 38%;
+ height: 90px;
+ width: 90px;
+ border:3px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ border-radius: 50%;
+
+}
+
+.follow{
+
+ border-radius: 15px;
+ padding-left: 20px;
+ padding-right: 20px;
+ height: 35px;
+}
+.image{
+  width:100%;
+  height:100%;
+  border-radius: 50%;
+}
+.stats span{
+
+ font-size: 18px;
+}
+.button{
+      width:8rem;
+      padding: 8px;
+      background-color: orange;
+      margin:1rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      text-decoration: none;
+      color:black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+.login__field {
+	padding: 20px 0px;	
+	position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;	
+}
+
+.login__icon {
+	position: absolute;
+	top: 30px;
+	color: #7875B5;
+}
+
+.login__input {
+	border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
+}
+
+.login__input:active,
+.login__input:focus,
+.login__input:hover {
+	outline: none;
+	border-bottom-color: #d26438;
+}
+        </style>
+    </head>
+    <body>
+      <% if(locals.err_msg) { %>
+      <div class="alert alert-danger" role="alert"><%= err_msg %></div>
+      <% } %>
+      <div class="container d-flex justify-content-center align-items-center">   
+        <div class="card">
+         <div class="upper">
+           <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" class="img-fluid">
+         </div>
+         <div class="user text-center">
+           <div class="profile">
+             <img src="data:image/jpeg;base64,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" class="image" width="80">
+           </div>
+         </div>
+         <div class="mt-5 text-center">
+           <h4 class="mb-0"><%= result[0].name %></h4>
+           <div class="d-flex justify-content-between align-items-center mt-4 px-4">
+             <div class="stats">
+               <h6 class="mb-0">Username</h6>
+               <span><%= result[0].username %></span>
+             </div>
+             <div class="stats">
+               <h6 class="mb-0">Contact</h6>
+               <span><%= result[0].contact %></span>
+             </div>
+             <div class="stats">
+               <h6 class="mb-0">Gender</h6>
+               <span><%= result[0].gender %></span>
+             </div>
+             <div class="stats">
+              <h4 class="mb-0">Change Password : </h4>
+            </div>
+            <form class="login" action="/change-pass-form" method="POST">
+              <div class="login__field">
+                  <input type="text" name="oldpass" id="oldpass" class="login__input" placeholder="Current Password" required>
+              </div>
+              <div class="login__field">
+                  <input type="text" name="newpass" id="newpass" class="login__input" placeholder="New Password" required>
+                </div>
+                <div class="login__field">
+                  <input type="text" name="conpass" id="conpass" class="login__input" placeholder="Confirm Password" required>
+              </div>
+              <div class="stats" style="display: flex;align-items: center;justify-content: center;">
+                <button  class="button" type="submit">Change Pass</button>
+              </div>
+            </form>
+              <div class="stats" style="display: flex;align-items: center;justify-content: center;">
+                <a href="/" class="button" >HOME</a>
+              </div>
+           </div>
+         </div>        
+        </div>
+      </div>
+    </body>
+</html>

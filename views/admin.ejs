@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <style>
+            body{
+                padding:1rem;
+            }
+            .button{
+                width:8rem;
+                padding: 8px;
+                background-color: orange;
+                margin:1rem;
+                border-radius: 1rem;
+                cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                text-decoration: none;
+                color:black
+            }
+            body{
+                padding:1rem;
+                background: linear-gradient(to right, #e0eafc, #cfdef3);
+            }
+            .button{
+                width:8rem;
+                padding: 8px;
+                background-color: orange;
+                margin:1rem;
+                border-radius: 1rem;
+                cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                text-decoration: none;
+                color:black
+            }
+        </style>
+    </head>
+    <body>
+        <% for(var i=0; i < result.length; i++) { %>
+        <tr>
+        <td style="font-size:20px">ID : <%= result[i].id %></td><br><br>
+        <td>Name : <%= result[i].name %></td><br>
+        <td> Password : <%= result[i].password %></td><br>
+        <td>Username : <%= result[i].username %></td><br>
+        <td>Contact : <%= result[i].contact %></td><br>
+        <td>gender : <%= result[i].gender %></td><br>
+        </tr><br>
+        <hr>
+        <% } %>
+        <br>
+        <a href="/" class="button">
+            Home
+        </a>
+    </body>
+</html>

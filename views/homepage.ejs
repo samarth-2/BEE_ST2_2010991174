@@ -1,8 +1,64 @@
 <html>
     <head>
-
+        <style>
+            body{
+                background: linear-gradient(to right, #e0eafc, #cfdef3);
+                padding:1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .button{
+                width:8rem;
+                padding: 8px;
+                background-color: orange;
+                margin:1rem;
+                border-radius: 1rem;
+                cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                text-decoration: none;
+                color:black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .contain{
+                width:300px;
+                height:fit-content;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-radius: 1rem;
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+        </style>
     </head>
     <body>
-        hello world welcome 
+        <div class="contain">
+            <% if(locals.check) { %>
+                <a href="/login" class="button">
+                    Login
+                </a>
+                <a href="/signup" class="button">
+                    Signup
+                </a>
+            <% } %>
+
+            <% if(locals.logout) { %>
+                <form action="/profile-get" method="GET">
+                    <button style="outline: none;" class="button" type="submit">Profile</button>
+                </form>
+                <form action="/logout-form" method="POST">
+                    <button style="background-color: grey;"  class="button" type="submit">Logout</button>
+                </form>
+            <% } %>
+            <br><br>
+            <form action="/admin-get" method="GET">
+                    <button class="button" type="submit">Admin</button>
+            </form>
+        </div>
+        
     </body>
 </html>
